@@ -2,7 +2,7 @@
 <div>
   <% @contents.each do |content| %>
   <div>
-    投稿日時：<%= content.created_at %>
+    投稿日時：<%= l content.created_at %>
   </div>
   <div>
     ニックネーム：<%= content.nickname %>
