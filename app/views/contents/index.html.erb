@@ -1,0 +1,18 @@
+<h1>目標一覧</h1>
+<div>
+  <% @contents.each do |content| %>
+  <div>
+    投稿日時：<%= content.created_at %>
+  </div>
+  <div>
+    ニックネーム：<%= content.nickname %>
+  </div>
+  <div>
+    スタディルール：<%= content.study_rule %>
+  </div>
+  <div>
+    一日でやること：<%= content.text %>
+  </div>
+  ---------------------------------------
+  <% end %>
+</div>
