@@ -1,19 +1,30 @@
-<%= link_to '目標一覧へ',contents_path %>
-<h1>本日の目標設定</h1>
-<%= form_with model: @content, local: true do |f| %>
-<div>
-  <%= f.label :nickname %>
-  <%= f.text_field :nickname %>
+<div class="container-fluid d-flex">
+  <div class="row col-3 ">
+  </div>
+  <div class="container-fluid">
+      <div class="row justify-content-center my-3">
+          <%= link_to '目標一覧へ',contents_path, class: "col-6 btn btn-lg btn-danger" %>
+      </div>
+      <h1 class="row justify-content-center my-3">本日の目標設定</h1>
+      <%= form_with model: @content, local: true, class:"" do |f| %>
+        <div class="row justify-content-center my-3">
+          <%= f.label :nickname, class:"form-label" %>
+          <div class="form-text">イニシャル、キャラクター名、何でもOKです。</div>
+          <%= f.text_field :nickname, class:"form-control-lg" %>
+        </div>
+        <div class="row justify-content-center my-3">
+          <%= f.label :study_rule, placeholder: 'ニックネーム', class:"form-label" %>
+          <%= f.text_area :study_rule, placeholder: '今日のスタディルール', class:"form-control-lg" %>
+        </div>
+        <div class="row justify-content-center my-3">
+          <%= f.label :text, class:"form-label" %>
+          <%= f.text_area :text, placeholder: '今日やること', rows: 10, class:"form-control-lg" %>
+        </div>
+        <div class="row justify-content-center my-3">
+          <%= f.submit '送信', class:"col-6 btn btn-lg btn-primary" %>
+        </div>
+      <% end %>
+  </div>
+  <div class="row col-3">
+  </div>
 </div>
-<div>
-  <%= f.label :study_rule, placeholder: 'ニックネーム' %>
-  <%= f.text_area :study_rule, placeholder: '今日のスタディルール' %>
-</div>
-<div>
-  <%= f.label :text %>
-  <%= f.text_area :text, placeholder: '今日やること', rows: 10 %>
-</div>
-<div>
-  <%= f.submit '送信' %>
-</div>
-<% end %>
