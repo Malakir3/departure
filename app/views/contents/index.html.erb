@@ -5,7 +5,7 @@
     <div>
       <% @contents.each do |content| %>
       <div>
-        
+        <%= link_to '', root_path, class: "btn btn-large btn-outline-warning" %>
       </div>
       <div>
         投稿日時：<%= l content.created_at %>
