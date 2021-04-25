@@ -5,7 +5,8 @@
     <div>
       <% @contents.each do |content| %>
       <div>
-        <%= link_to '', root_path, class: "btn btn-large btn-outline-warning" %>
+        <%= link_to '編集', edit_content_path(content.id), class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to '削除', content_path(content.id), method: :delete, class: "btn btn-sm btn-outline-danger" %>
       </div>
       <div>
         投稿日時：<%= l content.created_at %>

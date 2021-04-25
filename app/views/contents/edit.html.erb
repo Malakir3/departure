@@ -1,0 +1,27 @@
+<div class="container-fluid d-flex">
+  <div class="row col-3 me-3 bg-original"></div>
+  <div class="container-fluid">
+      <h1 class="row justify-content-center my-3">目標編集</h1>
+      <%= form_with model: @content, local: true, class:"" do |f| %>
+        <div class="row justify-content-center my-3">
+          <%= f.label :nickname, class:"form-label" %>
+          <div class="form-text">イニシャル、キャラクター名、何でもOKです。</div>
+          <%= f.text_field :nickname, placeholder: 'ニックネーム', class:"form-control-lg" %>
+        </div>
+        <div class="row justify-content-center my-3">
+          <%= f.label :study_rule, class:"form-label" %>
+          <div class="form-text">今日の作業で意識することを記入しましょう。（ペース配分、食事、休憩など）</div>
+          <%= f.text_area :study_rule, placeholder: '今日のスタディルール', class:"form-control-lg" %>
+        </div>
+        <div class="row justify-content-center my-3">
+          <%= f.label :text, class:"form-label" %>
+          <div class="form-text">今日の作業内容を期限を決めて書き出しましょう。</div>
+          <%= f.text_area :text, placeholder: '今日やること', rows: 10, class:"form-control-lg" %>
+        </div>
+        <div class="row justify-content-center my-3">
+          <%= f.submit '送信', class:"col-6 btn btn-lg btn-primary" %>
+        </div>
+      <% end %>
+  </div>
+  <div class="row col-3 ms-3 bg-original"></div>
+</div>

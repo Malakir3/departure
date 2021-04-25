@@ -17,11 +17,11 @@ class ContentsController < ApplicationController
   end
 
   def update
-    return if @content.update
+    return if @content.update(content_params)
     render :new
   end
 
-  def destory
+  def destroy
     @content.destroy
   end
 
