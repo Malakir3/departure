@@ -1,19 +1,30 @@
-<%= link_to 'トップページへ', root_path, class: "btn btn-large btn-outline-warning" %>
-<h1>目標一覧</h1>
-<div>
-  <% @contents.each do |content| %>
-  <div>
-    投稿日時：<%= l content.created_at %>
+<div class="container-fluid d-flex">
+  <div class="row col-3 me-3 bg-original"></div>
+  <div class="container-fluid">
+    <h1 class="row justify-content-center my-3">目標一覧</h1>
+    <div>
+      <% @contents.each do |content| %>
+      <div>
+        
+      </div>
+      <div>
+        投稿日時：<%= l content.created_at %>
+      </div>
+      <div>
+        ニックネーム：<%= content.nickname %>
+      </div>
+      <div>
+        スタディルール：<%= content.study_rule %>
+      </div>
+      <div>
+        一日でやること：<%= content.text %>
+      </div>
+      ---------------------------------------
+      <% end %>
+    </div>
+  <%= link_to 'トップページへ', root_path, class: "btn btn-large btn-outline-warning" %>
   </div>
-  <div>
-    ニックネーム：<%= content.nickname %>
-  </div>
-  <div>
-    スタディルール：<%= content.study_rule %>
-  </div>
-  <div>
-    一日でやること：<%= content.text %>
-  </div>
-  ---------------------------------------
-  <% end %>
+  <div class="row col-3 ms-3 bg-original"></div>
 </div>
+
+
