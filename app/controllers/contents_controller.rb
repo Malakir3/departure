@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   before_action :find_content, only: [:edit, :update, :destroy]
 
   def index
-    @contents = Content.all
+    @contents = Content.all.order('created_at DESC')
   end
   def new
     @content = Content.new
